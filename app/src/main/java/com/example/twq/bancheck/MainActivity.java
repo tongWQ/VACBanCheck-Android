@@ -48,15 +48,27 @@ public class MainActivity extends AppCompatActivity {
 
                 if (result.VACBanned){
                     textViewVACBannedValue.setTextColor(getColor(R.color.red));
+                    if (result.DaysSinceLastBan>0){
+                        textViewDaysSinceLastBanValue.setTextColor(getColor(R.color.red));
+                    }
                 }
                 if (result.NumberOfGameBans>0){
                     textViewGameBannedValue.setTextColor(getColor(R.color.red));
+                    if (result.DaysSinceLastBan>0){
+                        textViewDaysSinceLastBanValue.setTextColor(getColor(R.color.red));
+                    }
                 }
                 if (result.CommunityBanned){
                     textViewCommunityBannedValue.setTextColor(getColor(R.color.red));
+                    if (result.DaysSinceLastBan>0){
+                        textViewDaysSinceLastBanValue.setTextColor(getColor(R.color.red));
+                    }
                 }
-                if (result.EconomyBan!="none"){
-                    textViewCommunityBannedValue.setTextColor(getColor(R.color.red));
+                if (!result.EconomyBan.equals("none")){
+                    textViewEconomyBannedValue.setTextColor(getColor(R.color.red));
+                    if (result.DaysSinceLastBan>0){
+                        textViewDaysSinceLastBanValue.setTextColor(getColor(R.color.red));
+                    }
                 }
 
                 sysMessage="";
@@ -100,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
     public void buttonCheckClick(View v){
 
         String inputValue = editTextInput.getText().toString();
-        if (inputValue!=""){
+        if (!inputValue.equals("")){
             toCheckSteamID=inputValue;
             flagAPIConn=true;
             Thread t = new APIConnectionThread();
@@ -131,4 +143,5 @@ public class MainActivity extends AppCompatActivity {
 
 */
     }
+
 }
