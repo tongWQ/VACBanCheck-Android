@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="190dp"
+        android:layout_height="52dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="输入挂逼steam ID"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="58dp" />
+
+    <Button
+        android:id="@+id/buttonCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="118dp"
+        android:onClick="buttonCheckClick"
+        />
+
+    <TextView
+        android:id="@+id/textViewVACBanned"
+        android:layout_width="118dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="194dp"
+        android:text="VAC Banned"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/textViewVacBannedValue"
+        android:layout_width="119dp"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="36sp" />
+
+    <TextView
+        android:id="@+id/textViewGameBanned"
+        android:layout_width="103dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textViewVACBanned"
+        android:layout_centerHorizontal="true"
+        android:text="Game Banned"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/textViewGameBannedValue"
+        android:layout_width="105dp"
+        android:layout_height="71dp"
+        android:layout_centerInParent="true"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="36sp" />
+
+    <TextView
+        android:id="@+id/textViewCommunityBanned"
+        android:layout_width="104dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textViewVacBannedValue"
+        android:layout_alignParentEnd="true"
+        android:text="Community Banned"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/textViewCommunityBannedValue"
+        android:layout_width="105dp"
+        android:layout_height="69dp"
+        android:layout_alignStart="@+id/textViewCommunityBanned"
+        android:layout_alignTop="@+id/textViewVacBannedValue"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/textViewDaysSinceLastBan"
+        android:layout_width="141dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textViewDaysSinceLastBanValue"
+        android:layout_alignParentEnd="true"
+        android:text="Days Since Last Ban"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/textViewDaysSinceLastBanValue"
+        android:layout_width="140dp"
+        android:layout_height="112dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="46dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="36sp" />
+
+    <TextView
+        android:id="@+id/textViewEconomyBanned"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/textViewDaysSinceLastBan"
+        android:text="Economy Banned"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/textViewEconomyBannedValue"
+        android:layout_width="118dp"
+        android:layout_height="111dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textViewDaysSinceLastBan"
+        android:text="none"
+        android:textAlignment="center"
+        android:textSize="36sp" />
+
+</RelativeLayout>
