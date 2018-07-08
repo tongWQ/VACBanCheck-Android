@@ -9,4 +9,4 @@ Android 6.0/Android 7.0<br>
 <br>
 ## 直接运行
 <br>
-apk文件位置： app\build\outputs\apk\debug\app-debug.apk
+apk文件位置： 根目录下app-debug.apk
