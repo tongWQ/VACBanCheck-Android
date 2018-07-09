@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.StrictMode;
 import android.os.Vibrator;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -47,24 +48,28 @@ public class MainActivity extends AppCompatActivity {
                 textViewVACBannedValue.setText(Integer.toString(result.NumberOfVACBans));
 
                 if (result.VACBanned){
+                    CheckResultAlert("此ID已被VAC封禁");
                     textViewVACBannedValue.setTextColor(getColor(R.color.red));
                     if (result.DaysSinceLastBan>0){
                         textViewDaysSinceLastBanValue.setTextColor(getColor(R.color.red));
                     }
                 }
                 if (result.NumberOfGameBans>0){
+                    CheckResultAlert("此ID有游戏封禁");
                     textViewGameBannedValue.setTextColor(getColor(R.color.red));
                     if (result.DaysSinceLastBan>0){
                         textViewDaysSinceLastBanValue.setTextColor(getColor(R.color.red));
                     }
                 }
                 if (result.CommunityBanned){
+                    CheckResultAlert("此ID已被社区封禁");
                     textViewCommunityBannedValue.setTextColor(getColor(R.color.red));
                     if (result.DaysSinceLastBan>0){
                         textViewDaysSinceLastBanValue.setTextColor(getColor(R.color.red));
                     }
                 }
                 if (!result.EconomyBan.equals("none")){
+                    CheckResultAlert("此ID有交易封禁");
                     textViewEconomyBannedValue.setTextColor(getColor(R.color.red));
                     if (result.DaysSinceLastBan>0){
                         textViewDaysSinceLastBanValue.setTextColor(getColor(R.color.red));
@@ -107,6 +112,14 @@ public class MainActivity extends AppCompatActivity {
         textViewDaysSinceLastBanValue = findViewById(R.id.textViewDaysSinceLastBanValue);
         editTextInput = findViewById(R.id.editTextInput);
         handler=new myHandler();
+    }
+
+    public void CheckResultAlert(String alertType){
+        new AlertDialog.Builder(this)
+                .setTitle("Attention")
+                .setMessage(alertType)
+                .setPositiveButton("OK",null)
+                .show();
     }
 
     public void buttonCheckClick(View v){
